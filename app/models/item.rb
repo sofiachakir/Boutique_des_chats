@@ -9,4 +9,6 @@ class Item < ApplicationRecord
 	# Image obligatoire
 	validates :image_url, presence: true
 
+	has_many :cart_item_joins
+	has_many :carts, through: :cart_item_joins
 end
