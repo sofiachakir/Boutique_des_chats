@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def view
+  def show
+    @item = Item.find(params[:id])
   end
+
 end

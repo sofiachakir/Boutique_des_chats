@@ -8,12 +8,11 @@
 
 require 'faker'
 
-
 puts "let's seed..."
 
 puts "Destroy all previous Items"
 
-Item.destroy_all
+Item.all.destroy_all
 
 puts "Create Items"
 
