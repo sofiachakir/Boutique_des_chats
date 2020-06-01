@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="card mb3">
+    <div class="card-header">
+      <img style="height: auto; width: 100%; display: block;" src="<%= @item.image_url %>" alt="Card image">
+    </div>
+    <div class="card-body list-group-item">
+      <div class="row">
+        <div class="col-8">
+          <h4><%= @item.title %></h4>
+          <p><%= @item.description %></p>
+        </div>
+        <div class="col-4">
+          <h4>Prix: <%= @item.price %> €</h4>
+            <div class="form-group">
+              <%= button_to "Ajouter au panier", root_path, class: "btn btn-secondary btn-lg btn-block", type: "button" %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
