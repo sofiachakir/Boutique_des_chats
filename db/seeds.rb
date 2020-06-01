@@ -12,8 +12,8 @@ require 'faker'
 	Item.create!(
 		title: Faker::Marketing.buzzwords,
 		description: Faker::Lorem.paragraph,
-    	price: [0, 5, 8, 10, 12, 15, 20, 50].sample,
-    	image_url: Faker::Image.mageUrl,
+    	price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
+    	image_url: "https://img-3.journaldesfemmes.fr/Ll66iqS7MkJ5hutAFADT6AHrbeo=/910x607/smart/f72b5eef77e84bd194484b8e8866ad3a/ccmcms-jdf/11601853.jpg",
 		)
 
 end
