@@ -9,8 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% render 'shared/navbar' %>
-
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+    <script src="https://kit.fontawesome.com/7427ba72d8.js" crossorigin="anonymous"></script>
   </body>
 </html>
