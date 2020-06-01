@@ -1,30 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <br><br><br>
-      <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin mt-3" } do |f| %>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1>
-        <%= devise_error_messages! %>
-        <div class="form-group">
-          <%= f.label :email, "Email" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password, "Mot de passe" %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> caractères minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation, "Confirmes ton mot de passe" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-        </div>
-        <div class="actions mt-5">
-          <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+<body class="bg-primary">
+  <div class="container border rounded py-3 bg-white mt-5 col-7">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-6 text-center">
+        <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" alt="Image de chat" class="img-fluid rounded"/>
+      </div>
+      <div class="col-md-6">
+        <br><br><br>
+        <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin" } do |f| %>
+          <h1 class="h3 font-weight-normal text-center">Sign up</h1>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+            <%= f.label :email, "Email" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, "Mot de passe" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> caractères minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, "Confirmes ton mot de passe" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          </div>
+          <div class="actions mt-5">
+            <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
-</div>
+</body>
