@@ -8,11 +8,22 @@
 
 require 'faker'
 
-10.times do 
+puts "let's seed..."
+
+puts "Destroy all previous Items"
+
+Item.destroy_all
+
+
+puts "Create Items"
+
+10.times do
 	Item.create!(
-		title: Faker::Marketing.buzzwords, 
+		title: Faker::Marketing.buzzwords,
 		description: Faker::Lorem.paragraph,
-    	price: [0, 5, 8, 10, 12, 15, 20, 50].sample,
-    	image_url: Faker::Image.mageUrl,
+    price: [0, 5, 8, 10, 12, 15, 20, 50].sample,
+    image_url: "https://source.unsplash.com/1600x900/?cat,#{rand(0..50)}",
 		)
 end
+
+puts "Done!"
