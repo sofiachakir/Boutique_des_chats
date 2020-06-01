@@ -6,7 +6,6 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-<<<<<<< HEAD
   test "should get show" do
     get items_show_url
     assert_response :success
