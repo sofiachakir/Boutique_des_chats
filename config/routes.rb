@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-
   root :to => "items#index"
   resources :items
+
+  devise_for :users
+  resources :users do
+    resources :carts, only: [:show]
+  end
 end

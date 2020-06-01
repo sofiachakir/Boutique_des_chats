@@ -1,11 +1,12 @@
 <div class="container mt-5">
   <div class="card mb3">
-    <div class="card-header">
-      <img style="height: auto; width: 100%; display: block;" src="<%= @item.image_url %>" alt="Card image">
+    <div class="card-header d-flex">
+      <a class="iconplus fas fa-expand-arrows-alt" href="<%= @item.image_url %>"></a>
+      <img id="imgshow" src="<%= @item.image_url %>" alt="Card image">
     </div>
     <div class="card-body list-group-item">
       <div class="row">
-        <div class="col-8">
+        <div class="col-8" id="section">
           <h4><%= @item.title %></h4>
           <p><%= @item.description %></p>
         </div>

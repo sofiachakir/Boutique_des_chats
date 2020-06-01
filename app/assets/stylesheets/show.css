@@ -1,0 +1,4 @@
+#imgshow {width: 70%; height: 40rem; margin-right: auto; margin-left: auto; object-fit: cover;}
+.card-header {padding: 0!important;}
+.iconplus {margin-top: auto; padding-left: 2%; padding-bottom: 2%; font-size: 1.5em; color: grey;}
+.iconplus:hover {color: black;}
