@@ -16,7 +16,7 @@ require 'faker'
 		title: Faker::Marketing.buzzwords,
 		description: Faker::Lorem.paragraph,
     	price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
-    	image_url: Faker::Image.imageUrl,
+    	image_url: "https://source.unsplash.com/1600x900/?cat,#{rand(0..50)}",
 		)
 
 end

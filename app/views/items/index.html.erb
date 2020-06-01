@@ -23,11 +23,12 @@
                         <p class="card-text"><%= item.title %></p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-                            <%= button_to "Voir", root_path, class: "btn btn-sm btn-outline-primary", type: "button" %>
+                            <a class="btn btn-outline-dark" href="<%= user_cart_path(@cart) %>" role="button" style="">Mon espace évènement!</a>
+                            <a class="btn btn-sm btn-outline-primary" href="<%= item_path(item.id) %>" role="button">Voir</a>
                             <%= button_to "Ajouter au panier", root_path, class: "btn btn-sm btn-outline-secondary ml-2", type: "button" %>
                           </div>
                           <small class="text-muted"><%= item.price %> €</small>
-                        </div>
+                        </div>q
                       </div>
                     </div>
                   </div>
