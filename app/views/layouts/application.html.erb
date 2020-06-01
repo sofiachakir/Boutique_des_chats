@@ -8,9 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.css" >
+    <script src="https://kit.fontawesome.com/f5693b1d74.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/header' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
+    <script src="https://kit.fontawesome.com/7427ba72d8.js" crossorigin="anonymous"></script>
   </body>
 </html>
