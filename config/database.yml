@@ -78,6 +78,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: boutique_des_chats_production
+  username: boutique_des_chats
+  password: <%= ENV['BOUTIQUE_DES_CHATS_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   database: boutique_des_chats_production
