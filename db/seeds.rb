@@ -6,18 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
+puts "let's seed..."
+
+puts "Destroy all previous Items"
 
 Item.all.destroy_all
 
-require 'faker'
+puts "Create Items"
 
-10.times do
+9.times do
 	Item.create!(
 		title: Faker::Marketing.buzzwords,
 		description: Faker::Lorem.paragraph,
-    	price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
-    	image_url: "https://source.unsplash.com/1600x900/?cat,#{rand(0..50)}",
+    price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
+    image_url: "https://source.unsplash.com/1600x900/?cat,#{rand(0..50)}",
 		)
-
 end
+
+puts "Done!"
 

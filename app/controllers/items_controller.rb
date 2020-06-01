@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-    anonymous = User.find_by(email: "anonymous@yopmail.com")
-    @cart = anonymous.cart
+    @user = User.find_by(email: "anonymous@yopmail.com")
+    @cart = @user.cart
   end
 
   def show
