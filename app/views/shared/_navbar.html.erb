@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%= root_path %>" >Home <span class="sr-only">(current)</span></a>
+          <%= link_to "Home", root_path, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>
         <li class="nav-item">
           <% if user_signed_in? %>
@@ -21,7 +21,6 @@
 
        <ul class="navbar-nav">
         <% if !user_signed_in? %>
-        
           <li class="nav-item">
             <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
           </li>
