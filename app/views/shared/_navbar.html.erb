@@ -18,15 +18,6 @@
 
       </ul>
 
-       <ul class="navbar-nav mr-4">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to "Panier", user_cart_path(current_user.id, current_user.cart.id), class: "nav-link" %>
-            <% else %>
-            <%= link_to "Panier", new_user_session_path, class: "nav-link" %>
-          <% end %>
-        </li>
-      </ul>
 
        <ul class="navbar-nav">
 
@@ -45,14 +36,15 @@
       </ul>
 
 
-        <% if false %>
-          <li>
-            <a class="nav-link material-icons" href="#" style="color: white;">
-                add_shopping_cart
-              </a>
-          </li>
-         <%end %>
-       </ul>
+      <ul class="navbar-nav mr-4">
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to 'add_shopping_cart', user_cart_path(current_user.id, current_user.cart.id), class: "nav-link material-icons text-white " %>
+            <% else %>
+            <%= link_to 'add_shopping_cart', new_user_session_path, class: "nav-link material-icons text-white" %>
+          <% end %>
+        </li>
+      </ul>
 
     </div>
   </nav>
