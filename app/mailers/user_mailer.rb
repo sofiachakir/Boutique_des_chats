@@ -12,9 +12,12 @@ class UserMailer < ApplicationMailer
 		@order = order
 
 		@items = @order.items
+
+		@items.each do |item|
+			attachments[item.title + ".jpg"] = File.read("app/assets/images/" + item.image_url.gsub("http://localhost:3000/assets/",''))
+		end
 		
-		@url = 'https://monsite.com/'
-		mail(to: @user.email, subject: 'Bienvenue sur notre super site!')
+		mail(to: @user.email, subject: 'Merci pour votre commande !')
 	end
 	
 end

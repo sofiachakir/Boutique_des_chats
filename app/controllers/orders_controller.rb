@@ -40,7 +40,9 @@ class OrdersController < ApplicationController
           ctj.destroy
         end
       end
-
+      # Envoyer mail de confirmation
+      @order.order_send
+      flash[:success] = "Votre commande a été livrée par mail"
       redirect_to root_path
 
     else
