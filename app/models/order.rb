@@ -3,4 +3,9 @@ class Order < ApplicationRecord
 	# Association avec les articles
 	has_many :order_item_joins
 	has_many :items, through: :order_item_joins
+
+	def order_send
+    UserMailer.order_email(self.user, self).deliver_now
+  end
+
 end

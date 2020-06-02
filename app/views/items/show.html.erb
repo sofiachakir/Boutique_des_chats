@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="card mb3">
     <div class="card-header d-flex">
       <a class="iconplus fas fa-expand-arrows-alt" href="<%= @item.image_url %>"></a>
@@ -13,11 +13,13 @@
         <div class="col-4">
           <h4>Prix: <%= @item.price %> €</h4>
             <div class="form-group">
+
               <% if user_signed_in? %>
                 <%= link_to "Ajouter au panier", cart_item_join_index_path(item_id: @item), method: :create, class: "btn btn-secondary btn-lg btn-block" %>
               <% else %>
                 <%= link_to "Ajouter au panier", new_user_session_path, class: "btn btn-secondary btn-lg btn-block" %>
               <% end %>
+
             </div>
         </div>
       </div>
