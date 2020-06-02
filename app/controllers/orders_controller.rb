@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
         end
       end
 
+      redirect_to root_path
 
     else
       redirect_to root_path
