@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root :to => "items#index"
   resources :items
 
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :carts, only: [:show, :update]
   end
+
   resources :cart_item_join, only: [:create]
 
 end
