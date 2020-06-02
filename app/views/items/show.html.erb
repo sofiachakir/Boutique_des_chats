@@ -13,7 +13,7 @@
         <div class="col-4">
           <h4>Prix: <%= @item.price %> €</h4>
             <div class="form-group">
-              <%= button_to "Ajouter au panier", root_path, class: "btn btn-secondary btn-lg btn-block", type: "button" %>
+              <%= link_to "Ajouter au panier", cart_item_join_index_path(item_id: @item), method: :create, class: "btn btn-secondary btn-lg btn-block" %>
             </div>
         </div>
       </div>

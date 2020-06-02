@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users do
-    resources :carts, only: [:show]
+    resources :carts, only: [:show, :update]
   end
+  resources :cart_item_join, only: [:create]
 
 end
