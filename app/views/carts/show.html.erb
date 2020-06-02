@@ -4,6 +4,7 @@
       <div class="card mb3">
         <ul class="list-group list-group-flush">
           <% @all_items.each do |item| %>
+
             <li class="list-group-item">
               <div class="row no-gutters">
                 <div class="col-md-4">
@@ -27,6 +28,7 @@
     <div class="col-3">
       <div class="card mb3">
         <ul class="list-group list-group-flush">
+
           <li class="list-group-item">
             <h4>Total: <%= @cart.total_price %> €</h4>
             <%= link_to "Passer la commande", root_path, class: "btn btn-secondary btn-sm btn-block"%>
