@@ -4,4 +4,9 @@ class CartsController < ApplicationController
     @all_items = @cart.items
   end
 
+
+  def update
+    @cart = Cart.find(params[:id])
+  end
+
 end
