@@ -8,30 +8,33 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<%= root_path %>" >Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Panier</a>
+          <% if user_signed_in? %>
+            <%= link_to "Panier", user_cart_path(current_user.id, current_user.cart.id), class: "nav-link" %>
+            <% else %>
+            <%= link_to "Panier", new_user_session_path, class: "nav-link" %>
+          <% end %>
         </li>
       </ul>
 
        <ul class="navbar-nav">
-        <% if true %>
+        <% if !user_signed_in? %>
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
           </li>
-        <% end %>
-
-        <% if true %>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign In</a>
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
           </li>
-        <% end %>
 
-        <% if true %>
+        <% else %>
+
           <li>
-            <a class="nav-link btn btn-danger" href="#" data-method="delete"><strong>Logout</strong></a>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link btn btn-danger" %>
           </li>
+
         <%end %>
       </ul>
 
