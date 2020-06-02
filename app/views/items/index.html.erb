@@ -6,7 +6,9 @@
     <meta name="description" content="">
     <meta name="generator" content="Jekyll v4.0.1">
     <title>Album example · Bootstrap</title>
-    <!-- <link href="../assets/index.css" rel="stylesheet"> -->
+    <link href="../assets/index.css" rel="stylesheet">
+
+    
   </head>
 
   <body>
@@ -25,7 +27,13 @@
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="d-flex">
                             <a class="btn btn-sm btn-outline-primary" href="<%= item_path(item.id) %>" role="button">Voir</a>
-                            <%= link_to "Voir mon panier", user_cart_path(@user.id, @cart.id), class: "btn btn-sm btn-outline-secondary ml-2"%>
+
+                            <% if user_signed_in? %>
+                              <%= link_to "Ajouter au panier", cart_item_join_index_path(item_id: item), method: :create, class: "btn btn-sm btn-outline-secondary ml-2" %>
+                              <% else %>
+                              <%= link_to "Ajouter au panier", new_user_session_path, class: "btn btn-sm btn-outline-secondary ml-2" %>
+                            <% end %>
+
                           </div>
                           <small class="text-muted"><%= item.price %> €</small>
                         </div>
@@ -37,7 +45,6 @@
           </div>
         </div>
       </main>
-
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
