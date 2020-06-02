@@ -29,7 +29,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <h4>Total: <%= @cart.total_price %> €</h4>
-            <%= link_to "Passer la commande", root_path, class: "btn btn-secondary btn-sm btn-block"%>
+            <%= link_to "Passer la commande", new_user_cart_order_path(current_user.id, @cart.id), class: "btn btn-secondary btn-sm btn-block"%>
           </li>
         </ul>
       </div>

@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users do
-    resources :carts, only: [:show, :update]
+    resources :carts, only: [:show, :update] do
+      resources :orders, only: [:new, :create]
+    end
   end
 
   resources :cart_item_join, only: [:create, :destroy]
+
 
 end
