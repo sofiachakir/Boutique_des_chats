@@ -13,6 +13,7 @@ puts "let's seed..."
 puts "Destroy all previous Items"
 
 Item.all.destroy_all
+
 ActiveRecord::Base.connection.reset_pk_sequence!('items')
 puts "Create Items"
 
@@ -22,8 +23,10 @@ puts "Create Items"
 		title: Faker::Marketing.buzzwords,
 		description: Faker::Lorem.paragraph,
     price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
+
     image_url: "http://localhost:3000/assets/#{i + 1}.jpg",
 		)
+
 
 end
 

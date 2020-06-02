@@ -10,4 +10,5 @@ class Cart < ApplicationRecord
 		end
 		prices.reduce(:+)
 	end
+
 end
