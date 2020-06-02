@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :carts, only: [:show, :update]
   end
 
-  resources :cart_item_join, only: [:create]
+  resources :cart_item_join, only: [:create, :destroy]
 
 end
