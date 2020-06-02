@@ -7,8 +7,6 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.find(params[:id])
-    puts "+"*60
-    puts params
   end
 
 end
