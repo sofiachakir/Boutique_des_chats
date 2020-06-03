@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profile', to:'pages#profile'
+  
   root :to => "items#index"
   resources :items
 
