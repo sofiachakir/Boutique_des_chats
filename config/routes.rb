@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :cart_item_join, only: [:create, :destroy]
 
+  namespace :admin do
+    root to: 'orders#index'
+    resources :orders, only: [:index]
+  end
 
 end
