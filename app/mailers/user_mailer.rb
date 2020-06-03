@@ -19,5 +19,13 @@ class UserMailer < ApplicationMailer
 		
 		mail(to: @user.email, subject: 'Merci pour votre commande !')
 	end
+
+	def order_confirmation_to_admin(user, order)
+		@user = user
+		@order = order
+		@items = @order.items
+		
+		mail(to: @user.email, subject: 'Une nouvelle commande effectuée sur Meiko Boutique !')
+	end
 	
 end
