@@ -24,7 +24,7 @@ puts "Create Items"
 		description: Faker::Lorem.paragraph,
     price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
 
-    image_url: "http://localhost:3000/assets/#{i + 1}.jpg",
+    image_url: "https://boutique-des-chats-staging.herokuapp.com/assets/#{i + 1}.jpg",
 		)
 
 
