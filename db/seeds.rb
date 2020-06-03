@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 
 puts "let's seed..."
 
@@ -24,7 +24,7 @@ puts "Create Items"
 		description: Faker::Lorem.paragraph,
     price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
 
-    image_url: "https://boutique-des-chats-staging.herokuapp.com/assets/#{i + 1}.jpg",
+    image_url: "http://www.localhost:3000/assets/#{i + 1}.jpg",
 		)
 
 
@@ -32,4 +32,6 @@ end
 
 
 puts "Done!"
+
+
 

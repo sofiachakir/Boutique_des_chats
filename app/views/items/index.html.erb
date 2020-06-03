@@ -39,7 +39,7 @@
                 <% @id = Item.where(title: "#{item.title}").ids %>
                   <div class="">
                     <div class="card mb-4 custom-card">
-                      <%= image_tag item.image_url, alt: 'picture', :class => "bd-placeholder-img card-img-top" %>
+                      <%= image_tag item.picture, alt: 'picture', :class => "bd-placeholder-img card-img-top" %>
                       <div class="card-body">
                         <p class="card-text"><%= item.title %></p>
                         <div class="d-flex justify-content-between align-items-center">
