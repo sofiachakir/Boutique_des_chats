@@ -20,6 +20,8 @@
                 <%= link_to "Ajouter au panier", new_user_session_path, class: "btn btn-secondary btn-lg btn-block" %>
               <% end %>
 
+              <%= link_to "Supprimer", item_path(@item.id), class: "btn btn-danger btn-lg btn-block", method: :delete %>
+
             </div>
         </div>
       </div>

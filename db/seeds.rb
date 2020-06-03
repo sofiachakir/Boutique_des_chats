@@ -17,20 +17,6 @@ Item.all.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('items')
 puts "Create Items"
 
-11.times do |i|
-
-	Item.create!(
-		title: Faker::Marketing.buzzwords,
-		description: Faker::Lorem.paragraph,
-    price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
-
-    image_url: "http://www.localhost:3000/assets/#{i + 1}.jpg",
-		)
-
-
-end
-
-
 puts "Done!"
 
 
