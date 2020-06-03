@@ -22,11 +22,15 @@ class Order < ApplicationRecord
 	end
 
 	def self.average_price
+    if self.all.length == 0
+      return 0
+    else
 		orders_total_prices = []
 		self.all.each do |order|
 			orders_total_prices << order.total_price
 		end
 		orders_total_prices.reduce(:+) / orders_total_prices.size.to_f
+  end
 	end
 
 end
