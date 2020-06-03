@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 
 puts "let's seed..."
 
@@ -17,18 +17,18 @@ Item.all.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('items')
 puts "Create Items"
 
-11.times do |i|
+# 11.times do |i|
 
-	Item.create!(
-		title: Faker::Marketing.buzzwords,
-		description: Faker::Lorem.paragraph,
-    price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
+# 	Item.create!(
+# 		title: Faker::Marketing.buzzwords,
+# 		description: Faker::Lorem.paragraph,
+#     price: [1, 5, 8, 10, 12, 15, 20, 50].sample,
 
-    image_url: "https://boutique-des-chats-staging.herokuapp.com/assets/#{i + 1}.jpg",
-		)
+#     image_url: "https://boutique-des-chats-staging.herokuapp.com/assets/#{i + 1}.jpg",
+# 		)
 
 
-end
+# end
 
 
 puts "Done!"
