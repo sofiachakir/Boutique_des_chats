@@ -1,0 +1,43 @@
+<div class="container-fluid">
+      <div class="row">
+
+        <%= render "admin/sidebar"  %>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+          </div>
+
+          <div class="my-4">
+          	<p>Nombre de commandes effectuées : <%= @orders.length %></p>
+          	<p>Prix moyen : <%= @orders.average_price %> €</p>
+
+          </div>
+
+          <h2>Commandes effectuées</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Client</th>
+                  <th>Date d'achat</th>
+                  <th>Prix total</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<% @orders.each do |order| %>
+                <tr>
+                  <td><%= order.id %></td>
+                  <td><%= order.user.email %></td>
+                  <td><%= order.created_at %></td>
+                  <td><%= order.total_price %> €</td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <br>
+          </div>
+        </main>
+      </div>
+    </div>
