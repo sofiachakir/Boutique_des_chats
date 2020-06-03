@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.css" >
+	</head>
+	<body>
+		<div class="container my-3">
+			<h1 class="mb-5">Une nouvelle commande vient d'être effectuée sur votre site Meiko Boutique !</h1>
+
+			<p class="mb-3"> <%= @order.user.email %> vient de commander <%= @order.items.size %> photo(s) pour un total de <%= @order.total_price %> €.</p>
+
+			<p>Vous trouverez ci-dessous un récapitulatif des photos commandées :</p>
+
+			<table class="table">
+			  <thead class="thead-light">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Titre</th>
+			      <th scope="col">Prix</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @items.each_with_index do |item, index| %>
+			    <tr>
+			      <th scope="row"><%= index + 1 %></th>
+			      <td><%= item.title %></td>
+			      <td><%= item.price %> €</td>
+			    </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+
+		</div>
+
+	</body>
+</html>
