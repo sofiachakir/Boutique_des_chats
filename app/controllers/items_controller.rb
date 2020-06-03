@@ -9,8 +9,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    puts "="*60
-    puts params
     if @item.save
       redirect_to root_path
     else
