@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-5">
 	<h1>Mon profil</h1>
 	<p>Votre profil est lié à votre adresse email  : <%= current_user.email %></p>
-	
+
 	<%= link_to "Editer mon profil", edit_user_registration_path, class:"btn btn-secondary" %>
 
 
@@ -10,6 +10,9 @@
 			<div class="col-lg-12">
 				<h2>Votre liste d'achats</h2>
 
+			<% if @orders.empty? %>
+			<p>Vous n'avez pas encore effectuer de commandes.</p>
+			<% else %>
 			<div class="bs-component">
 				<table class="table table-hover">
   				<thead>
@@ -32,8 +35,9 @@
     				</tr>
   				</tbody>
 				</table> 
-
 			</div>
+			<% end %>
+
 			</div>
 		</div>
 	</div>
