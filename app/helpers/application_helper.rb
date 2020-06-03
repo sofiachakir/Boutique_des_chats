@@ -7,4 +7,12 @@ module ApplicationHelper
 	    when 'alert' then "alert-warning"
 	  end
 	end
+
+	def check_if_admin
+		unless current_user.is_admin
+			flash[:error] = "Cette page n'est disponible que pour les administrateurs du site"
+			redirect_to root_path
+		end
+	end
+	
 end
