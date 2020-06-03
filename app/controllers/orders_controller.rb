@@ -46,22 +46,13 @@ class OrdersController < ApplicationController
       flash[:success] = "Votre commande a été livrée par mail"
       redirect_to root_path
 
-    else
-      redirect_to root_path
-    end
+      else
+        redirect_to root_path
+      end
 
     rescue Stripe::CardError => e
     flash[:error] = e.message
 
-  end
-
-  private
-
-  def authenticate_user
-    unless current_user
-      flash[:danger] = "Not logged in."
-      redirect_to root_path
-    end
   end
 
 end
