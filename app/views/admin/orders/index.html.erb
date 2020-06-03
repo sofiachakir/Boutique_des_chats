@@ -1,29 +1,7 @@
 <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky mt-5">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <%= link_to admin_root_path, class: "nav-link" do %>
-                  <i class="fas fa-file-invoice"></i>
-                  Orders
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "#", class: "nav-link" do %>
-                  <i class="fas fa-shopping-cart"></i>
-                  Products
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "#", class: "nav-link" do %>
-                  <i class="fas fa-users"></i>
-                  Customers
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </nav>
+
+        <%= render "admin/sidebar"  %>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -33,7 +11,7 @@
           <div class="my-4">
           	<p>Nombre de commandes effectuées : <%= @orders.length %></p>
           	<p>Prix moyen : <%= @orders.average_price %> €</p>
-          	
+
           </div>
 
           <h2>Commandes effectuées</h2>
