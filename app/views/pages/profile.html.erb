@@ -1,0 +1,17 @@
+<h1>Mon profil</h1>
+<p>Voici votre email : <%= current_user.email %></p>
+<br>
+<h2>Votre liste d'achats</h2>
+<ul class="list-group list-group-flush">
+	<%= @ordered_items.each do |item| %>
+	<li class="list-group-items">Titre :<%= item.title %>
+	</li>
+	<li class="list-group-items">Description :<%= item.description %>
+	</li>
+	<li class="list-group-items">Prix :<%= item.price %>
+	</li>
+	<li class="list-group-items"><%= image_tag item.image_url, alt:"picture", class: "bd-placeholder-img card-img" %>
+	</li>
+<%end%>
+	
+</ul>
