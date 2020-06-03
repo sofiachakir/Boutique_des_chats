@@ -1,0 +1,11 @@
+Une nouvelle commande vient d'être effectuée sur votre site Meiko Boutique !
+==========================================================
+
+<%= @order.user.email %> vient de commander <%= @order.items.size %> photo(s) pour un total de <%= @order.total_price %> €.
+
+Vous trouverez ci-dessous un récapitulatif des photos commandées :
+
+| # | Titre | Description |
+<% @items.each_with_index do |item, index| %>
+| <%= index + 1 %> | <%= item.title %> | <%= item.price %> € |
+<% end %>
