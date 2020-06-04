@@ -30,6 +30,8 @@
       </div>
     </div>
   </div>
+</div>
+
 
       <main role="main">
         <div id="boutic-img-cats" class="album py-5 bg-light">
@@ -51,20 +53,14 @@
                               <% else %>
                               <%= link_to "Ajouter au panier", new_user_session_path, class: "btn btn-sm btn-outline-secondary ml-2" %>
                             <% end %>
-
-                          </div>
-                          <small class="text-muted"><%= item.price %> €</small>
-                        </div>
-                      </div>
                     </div>
-
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </main>
-
-
-    </body>
-</html>
+                    <small class="text-muted"><%= item.price %> €</small>
+                  </div>
+                </div>
+              </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
 

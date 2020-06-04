@@ -1,5 +1,6 @@
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
+        <%= render "admin/sidebar"  %>
         <div class="col-md-6 offset-md-3">
           <br><br><br>
           <%= form_tag admin_items_path, multipart: true do %>
@@ -14,17 +15,16 @@
           </div>
             <br />
           <div class="form-group">
-            <%= label_tag :price%>
+            <%= label_tag :prix%>
             <%= number_field_tag :price, nil, class: 'form-control',required: true, placeholder: '€' %>
           </div>
             <br />
           <div class="form-group">
-            <p>Charger la photo</p>
               <%= file_field_tag :picture, required: true, direct_upload: true %><br>
           </div>
             <br />
           <div class="actions mt-5">
-            <%= submit_tag "Create Item", class: 'btn btn-primary' %>
+            <%= submit_tag "Mettre en vente un produit", class: 'btn btn-primary' %>
           </div>
             <br />
           <% end %>
