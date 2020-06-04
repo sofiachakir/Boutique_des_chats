@@ -10,11 +10,10 @@ class UserMailer < ApplicationMailer
 	def order_email(user, order)
 		@user = user
 		@order = order
-
 		@items = @order.items
-
 		@items.each do |item|
-			attachments[item.title + ".jpg"] = File.read("app/assets/images/" + item.image_url.gsub("http://localhost:3000/assets/",''))
+			@filename = item.id.to_s + item.picture.filename.extension_with_delimite
+			attachments.inline[@filename] = item.picture.download
 		end
 		
 		mail(to: @user.email, subject: 'Merci pour votre commande !')
