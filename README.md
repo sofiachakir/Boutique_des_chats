@@ -1,24 +1,45 @@
-# README
+# Boutique Chat 🐱 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bienvenue dans notre projet. On a realisé un site boutique en ligne.
 
-Things you may want to cover:
+#### Compte Administrateur
+Connectez-vous avec : login :  | password : 
 
-* Ruby version
 
-* System dependencies
+## version en ligne :
 
-* Configuration
+https://boutique-des-chats-staging.herokuapp.com
 
-* Database creation
+## How-to :
+Si vous voulez faire fonctionner ce projet localement, téléchargez ce repository, soit à partir d'un fichier a.zip, soit en le clonant.
 
-* Database initialization
+```bash
+bundle install
+```
+```bash
+rails db:create
+```
+```bash
+rails db:migrate
+```
+```bash
+rails db:seed
+```
+```bash
+rails server
+```
 
-* How to run the test suite
+### Une fois le server connecté, rendez-vous sur : http://localhost:3000/
 
-* Services (job queues, cache servers, search engines, etc.)
+checkout the website !
 
-* Deployment instructions
+## Team :
+Athénais DUPUY 
 
-* ...
+Emilie DUFAU
+
+Eva AFRIANA https://github.com/evafriana 
+
+Jérémi DELMAS
+
+Sofia CHAKIR : https://github.com/sofiachakir
