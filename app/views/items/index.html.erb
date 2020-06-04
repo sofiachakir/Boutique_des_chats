@@ -37,7 +37,7 @@
             <div class="card-columns">
               <% @items.order([:id]).each do |item| %>
                 <% @id = Item.where(title: "#{item.title}").ids %>
-                  <div class="">
+
                     <div class="card mb-4 custom-card">
                       <%= image_tag item.picture, alt: 'picture', :class => "bd-placeholder-img card-img-top" %>
                       <div class="card-body">
@@ -57,7 +57,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+
               <% end %>
             </div>
           </div>

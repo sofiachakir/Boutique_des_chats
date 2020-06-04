@@ -1,0 +1,35 @@
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <br><br><br>
+          <%= form_tag admin_items_path, multipart: true do %>
+          <h1 class="h3 mb-3 font-weight-normal text-center">Nouvelle photo</h1>
+          <div class="form-group">
+            <%= label_tag :titre %>
+            <%= text_field_tag :title, nil, class: 'form-control', required: true %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :description %>
+            <%= text_area_tag :description, nil, class: 'form-control', required: true %>
+          </div>
+            <br />
+          <div class="form-group">
+            <%= label_tag :price%>
+            <%= number_field_tag :price, nil, class: 'form-control',required: true, placeholder: '€' %>
+          </div>
+            <br />
+          <div class="form-group">
+            <p>Charger la photo</p>
+              <%= file_field_tag :picture, required: true, direct_upload: true %><br>
+          </div>
+            <br />
+          <div class="actions mt-5">
+            <%= submit_tag "Create Item", class: 'btn btn-primary' %>
+          </div>
+            <br />
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

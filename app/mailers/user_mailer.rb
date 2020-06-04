@@ -14,9 +14,9 @@ class UserMailer < ApplicationMailer
 		@items = @order.items
 
 		@items.each do |item|
-			attachments[item.title + ".jpg"] = File.read("app/assets/images/" + item.image_url.gsub("http://localhost:3000/assets/",''))
+			# attachments[item.title + ".jpg"] = File.read("app/assets/images/" + item.image_url.gsub("http://localhost:3000/assets/",''))
 		end
-		
+
 		mail(to: @user.email, subject: 'Merci pour votre commande !')
 	end
 
@@ -24,8 +24,8 @@ class UserMailer < ApplicationMailer
 		@user = user
 		@order = order
 		@items = @order.items
-		
+
 		mail(to: @user.email, subject: 'Une nouvelle commande effectuée sur Meiko Boutique !')
 	end
-	
+
 end
