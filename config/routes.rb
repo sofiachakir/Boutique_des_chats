@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :items
 
   devise_for :users
-  resources :users do
-    resources :carts, only: [:show, :update] do
-      resources :orders, only: [:new, :create]
-    end
-  end
+
+  resource :user, only: [:show], path: 'mon_profil', as: 'profile'
+  
+  resource :cart, only: [:show], path: 'mon_panier'
+  
+  resources :orders, only: [:new, :create]  
 
   resources :cart_item_join, only: [:create, :destroy]
 
