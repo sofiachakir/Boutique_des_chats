@@ -12,9 +12,17 @@ puts "let's seed..."
 
 puts "Destroy all previous Items"
 
+CartItemJoin.all.destroy_all
+OrderItemJoin.all.destroy_all
+Order.all.destroy_all
+Cart.all.destroy_all
 Item.all.destroy_all
+User.all.destroy_all
 
-ActiveRecord::Base.connection.reset_pk_sequence!('items')
+# Remettre les compteurs à 0
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 puts "Create Admin account"
 User.create(email: "meiko.boutique@yopmail.com", password: "motdepasse", is_admin: true)

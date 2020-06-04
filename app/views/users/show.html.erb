@@ -42,7 +42,9 @@
       							<th scope="row"><%= item.title %></th>
       							<td><%= item.description %></td>
       							<td><%= item.price %></td>
-      							<td><img src="<%= item.image_url%>" class="img-thumbnail" alt="chat" width="60"></td>
+      							<td>
+      									<%= image_tag item.picture, alt: 'chat', :class => "img-thumbnail img-ordered"%>
+      							</td>
 									</tr>
 									<br>
 								<%end%>
