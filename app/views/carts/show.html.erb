@@ -31,7 +31,7 @@
           <li class="list-group-item">
             <h4>Total: <%= @cart.total_price %> €</h4>
               <% if @cart.total_price.to_i != 0%>
-                <%= form_tag user_cart_orders_path(current_user.id, @cart.id) do %>
+                <%= form_tag orders_path do %>
                   <article>
                     <% if flash[:error].present? %>
                       <div id="error_explanation">

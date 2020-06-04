@@ -36,3 +36,44 @@
     </div>
   </div>
 </body>
+
+
+<body class="bg-primary">
+  <div class="container border rounded py-3 bg-white mt-5 col-7 mb-5">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-6">
+        <br><br><br>
+        <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" } do |f| %>
+          <h1 class="h3 font-weight-normal text-center">Log in</h1>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+            <%= f.label :email, "Email" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password , "Mot de passe" %><br />
+            <%= f.password_field :password, autocomplete: "current-password",  class: "form-control" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me , "Se souvenir de moi ?"%>
+            </div>
+          <% end %>
+
+          <div class="actions mt-5">
+            <%= f.submit "Log in" , class: "btn btn-lg btn-primary btn-block" %>
+          </div>
+        <% end %>
+        <br>
+        <div class="text-center" >
+        Don't have an account? <%= render "devise/shared/links" %>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="Image de chat" class="img-fluid rounded"/>
+      </div>
+    </div>
+  </div>
+</body>
