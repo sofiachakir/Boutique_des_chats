@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
 			@filename = item.id.to_s + item.picture.filename.extension_with_delimiter
 			attachments.inline[@filename] = item.picture.download
 		end
-		
+
 		mail(to: @user.email, subject: 'Merci pour votre commande !')
 	end
 
@@ -23,8 +23,8 @@ class UserMailer < ApplicationMailer
 		@user = user
 		@order = order
 		@items = @order.items
-		
+
 		mail(to: @user.email, subject: 'Une nouvelle commande effectuée sur Meiko Boutique !')
 	end
-	
+
 end

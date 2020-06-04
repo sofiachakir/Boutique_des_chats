@@ -1,8 +1,8 @@
 <div class="container mt-5 mb-5">
   <div class="card mb3">
     <div class="card-header d-flex">
-      <a class="iconplus fas fa-expand-arrows-alt" href="<%= @item.picture %>"></a>
-      <%= image_tag @item.picture, alt: 'picture', :id => "imgshow" %>
+      <a class="iconplus fas fa-expand-arrows-alt"></a>
+        <%= cl_image_tag(@item.picture.key, alt: 'picture', :id => "imgshow", sign_url: true) %>
     </div>
     <div class="card-body list-group-item">
       <div class="row">
@@ -19,9 +19,6 @@
               <% else %>
                 <%= link_to "Ajouter au panier", new_user_session_path, class: "btn btn-secondary btn-lg btn-block" %>
               <% end %>
-
-              <%= link_to "Supprimer", item_path(@item.id), class: "btn btn-danger btn-lg btn-block", method: :delete %>
-
             </div>
         </div>
       </div>
