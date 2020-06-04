@@ -34,6 +34,7 @@ rails server
 checkout the website !
 
 Par défaut il n'y aura pas de photos à vendre. 
+
 Pour en ajouter, connectez-vous sur la page Admin, et ajoutez un nouveau produit.
 
 ## Team :
