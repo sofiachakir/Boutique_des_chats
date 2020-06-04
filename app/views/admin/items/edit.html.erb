@@ -7,32 +7,32 @@
       <div class="col-md-6">
         <br><br>
 
-<h2>Edit</h2>
+<h2>Modifier</h2>
 
       <%= form_for(@item, url: admin_item_path(@item), html: { method: :put }) do |f| %>
 
         <div class="field">
-          <%= f.label :title %><br />
-          <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+          <%= f.label :titre %><br />
+          <%= f.text_field :title, class: 'form-control', autofocus: true, autocomplete: "title" %>
         </div>
         <br>
         <div class="field">
           <%= f.label :description %><br />
-          <%= f.text_field :description, autofocus: true, autocomplete: "description" %>
+          <%= f.text_field :description, class: 'form-control', autofocus: true, autocomplete: "description" %>
         </div>
         <br>
         <div class="field">
-          <%= f.label :price %><br />
-          <%= f.text_field :price, autofocus: true, autocomplete: "price" %>
+          <%= f.label :prix %><br />
+          <%= f.text_field :price, class: 'form-control', autofocus: true, autocomplete: "price" %>
         </div>
         <br>
       <br>
       <div class="actions">
-          <%= f.submit "Update", class: "btn btn-primary" %>
+          <%= f.submit "Mettre à jour", class: "btn btn-primary" %>
       </div>
        <% end %>
       <hr>
-      <%= link_to "Back", :back %>
+      <%= link_to "Retour", :back %>
       <br>
       <br>
       </div>
