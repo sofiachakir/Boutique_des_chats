@@ -24,10 +24,10 @@
 
 				<% else %>
 				<div class="col-md-12 col-lg-12 col-sm-12">
-				<h2>Votre liste d'achats</h2>
+				<h2 class="mb-5">Votre liste d'achats</h2>
 					<div class="bs-component">
 						<% @orders.each_with_index do |order, index| %>
-						<h4 class="mt-5">Commande n°<%= index + 1 %> </h4>
+						<h4 >Commande n°<%= index + 1 %> </h4>
 						<table class="table table-hover table-active">
   						<thead>
     						<tr>
