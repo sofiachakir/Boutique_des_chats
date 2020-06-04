@@ -5,7 +5,7 @@ class CartItemJoinController < ApplicationController
     CartItemJoin.create(item_id: params[:item_id],
                         cart: current_user.cart)
     flash[:success] = "La photo a été ajoutée à votre panier"
-    redirect_to cart_path
+    redirect_to root_path
   end
 
   def destroy
