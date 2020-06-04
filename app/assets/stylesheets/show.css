@@ -15,4 +15,12 @@
     position: relative;
 
   }
+
 }
+    .intro-text2 {
+    left: 0;
+    width: 27rem;
+    position: relative!important;
+    margin: auto;
+
+  }
