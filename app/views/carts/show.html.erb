@@ -1,0 +1,67 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-9">
+      <div class="card mb3">
+        <% if @all_items.empty? %>
+        <div class="text-center">
+        <img src="https://fotosisters.com/wp-content/uploads/2019/03/404-Sad-Cat.png" alt="Sad Cat" class="sadcat" />
+        </div>
+            <% else %>
+        <ul class="list-group list-group-flush">
+          <% @all_items.each do |item| %>
+
+            <li class="list-group-item">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <%= image_tag item.picture, alt: 'picture', :class => "card-img" %>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= item.title %></h5>
+                    <p class="card-text"><%= item.description %></p>
+                    <p class="card-text"><small class="text-muted">Prix: <%= item.price %>€</small></p>
+                    <% cart_item_join = CartItemJoin.find_by(cart: @cart, item: item) %>
+                    <%= link_to "Supprimer", cart_item_join_path(cart_item_join), method: :delete, class: "btn btn-secondary btn-sm btn-block"%>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+         <%end%>
+      </div>
+    </div>
+    <div class="col-3 cart-button">
+      <div class="card mb3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+
+              <% if @cart.total_price.to_i != 0%>
+              <h4>Total: <%= @cart.total_price %> €</h4>
+                <%= form_tag orders_path do %>
+                  <article>
+                    <% if flash[:error].present? %>
+                      <div id="error_explanation">
+                        <p><%= flash[:error] %></p>
+                      </div>
+                    <% end %>
+                  </article>
+                  <button class="btn btn-secondary btn-sm btn-block" onclick="checkout();">Passer la commande</button>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-description="Paiement"
+                          data-amount="<%= @cart.total_price.to_i * 100 %>"
+                          data-locale="fr"
+                          data-currency="eur"
+                          type="text/javascript"></script>
+                          <style type="text/css">.stripe-button-el { display: none }</style>
+                <% end %>
+              <% else %>
+                 <button class="btn btn-secondary btn-sm btn-block">Panier vide</button>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

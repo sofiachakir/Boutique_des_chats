@@ -40,6 +40,6 @@ Emilie DUFAU https://github.com/EmilieDufau
 
 Eva AFRIANA https://github.com/evafriana 
 
-Jérémi DELMAS https://github.com/delmasdev
+Jérémy DELMAS https://github.com/delmasdev
 
 Sofia CHAKIR : https://github.com/sofiachakir

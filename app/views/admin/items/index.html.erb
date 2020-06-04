@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <%= render "admin/sidebar"  %>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+      </div>
+
+      <div class="my-4">
+        <%= link_to "Ajouter nouveau produit", new_admin_item_path, class: "btn btn-primary"  %>
+
+      </div>
+
+      <h2>Produits disponibles</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Titre</th>
+              <th>Description</th>
+              <th>Prix</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @items.each do |item| %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= item.title %></td>
+              <td><%= item.description %></td>
+              <td><%= item.price %> €</td>
+              <td><%= link_to "Afficher", admin_item_path(item) %></td>
+              <td><%= link_to "Modifier", edit_admin_item_path(item) %></td>
+              <td><%= link_to "Suprimer", admin_item_path(item), method: :delete  %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+      </div>
+    </main>
+  </div>
+</div>

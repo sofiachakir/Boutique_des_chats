@@ -1,0 +1,29 @@
+.custom-card:hover {box-shadow: 0 0 11px rgba(33,33,33,.2);}
+.custom-card {box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);}
+
+.intro {
+  position: relative;
+  }
+
+@media (min-width: 992px) {
+  .intro-img {
+    width: 28rem;
+    margin-right: 10rem;
+    object-fit: cover;
+    max-height: 22rem;
+    float: right;
+  }
+  .intro-text {
+    left: 0;
+    width: 27rem;
+    margin-top: -2rem;
+    margin-left: 10rem;
+    position: absolute!important;
+
+  }
+  .intro-button {
+    width: 100%;
+    left: 0;
+    bottom: -2rem;
+  }
+}

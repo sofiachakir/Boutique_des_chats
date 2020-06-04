@@ -4,12 +4,19 @@
     <title>BoutiqueDesChats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f5693b1d74.js" crossorigin="anonymous"></script>
+   
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'layouts/flash'%>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
+
 </html>

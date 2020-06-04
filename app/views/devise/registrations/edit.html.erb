@@ -1,0 +1,62 @@
+<body class="bg-primary">
+  <div class="container border rounded py-3 bg-white mt-5 col-7 mb-5">
+    <div class="row d-flex align-items-center justify-content-center">
+      
+      <div class="col-md-6  text-center">
+        <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" alt="Image de chat" class="img-fluid rounded" />
+      </div>
+
+      <div class="col-md-6">
+        <br><br>
+        <h1 class="h3 font-weight-normal text-center">Modifier mon profil</h1>
+        <br>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>En atente de confirmation pour: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :password, "Mot de passe" %> <i>(votre nouveau mot de passe)</i><br />
+          <%= f.password_field :password, autocomplete: "new-password",  class: "form-control" %>
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %> caractères minimum</em>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :current_password, "Mot de passe" %> <i>(votre mot de passe actuel)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password",  class: "form-control" %>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "Mettre à jour", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
+      <br>
+      <hr>
+      <h1 class="h4 font-weight-normal text-center">Supprimer mon compte</h1>
+
+      <p>Pour supprimer votre compte, cliquez sur le bouton ci-dessous. <%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg btn-secondary btn-block" %></p>
+
+      <%= link_to "Revenir sur votre profil user", :back %>
+      <br>
+      <br>
+
+      </div>
+    </div>
+
+    
+  </div>
+</body>
