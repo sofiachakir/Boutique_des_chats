@@ -9,7 +9,7 @@ module ApplicationHelper
 	end
 
 	def check_if_admin
-		unless current_user.is_admin
+		unless user_signed_in? && current_user.is_admin
 			flash[:error] = "Cette page n'est disponible que pour les administrateurs du site"
 			redirect_to root_path
 		end
