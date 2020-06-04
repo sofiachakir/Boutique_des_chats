@@ -12,12 +12,12 @@ puts "let's seed..."
 
 puts "Destroy all previous Items"
 
-CartItemJoin.all.destroy_all
-OrderItemJoin.all.destroy_all
-Order.all.destroy_all
-Cart.all.destroy_all
-Item.all.destroy_all
-User.all.destroy_all
+CartItemJoin.destroy_all
+OrderItemJoin.destroy_all
+Order.destroy_all
+Cart.destroy_all
+Item.destroy_all
+User.destroy_all
 
 # Remettre les compteurs à 0
 ActiveRecord::Base.connection.tables.each do |t|
