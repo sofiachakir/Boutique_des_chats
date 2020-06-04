@@ -1,6 +1,8 @@
-# Boutique Chat 🐱 
+# Meiko Shop 🐱 
 
 Bienvenue dans notre projet. On a realisé un site boutique en ligne, pour la vente de photo de chat.
+
+<img src="app/assets/images/8.jpg" width="350">
 
 #### Compte Administrateur
 Connectez-vous avec : login :  "meiko.boutique@yopmail.com" | password : "motdepasse" 
@@ -11,7 +13,7 @@ Connectez-vous avec : login :  "meiko.boutique@yopmail.com" | password : "motdep
 https://boutique-des-chats.herokuapp.com
 
 ## How-to :
-Si vous voulez faire fonctionner ce projet localement, téléchargez ce repository, soit à partir d'un fichier a.zip, soit en le clonant.
+Si vous voulez faire fonctionner ce projet localement, téléchargez ce repository, soit à partir d'un fichier .zip, soit en le clonant.
 
 ```bash
 bundle install
