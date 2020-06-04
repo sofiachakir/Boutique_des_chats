@@ -33,7 +33,7 @@ rails server
 
 ### Une fois le server connecté, rendez-vous sur : http://localhost:3000/
 
-checkout the website !
+Checkout the website !
 
 Par défaut il n'y aura pas de photos à vendre. 
 
