@@ -9,8 +9,9 @@ class Order < ApplicationRecord
   end
 
   def send_confirmation_to_admin
-  	# Récap envoyé à un user aléatoire
-  	UserMailer.order_confirmation_to_admin(User.all.sample, self).deliver_now
+  	# Récap envoyé à l'admin
+  	admin = User.find_by(email: "meiko.boutique@yopmail.com")
+  	UserMailer.order_confirmation_to_admin(admin, self).deliver_now
   end
 
   def total_price
