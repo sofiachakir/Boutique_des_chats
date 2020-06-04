@@ -3,8 +3,8 @@ class UserMailer < ApplicationMailer
 
 	def welcome_email(user)
 		@user = user
-		@url = 'https://monsite.com/'
-		mail(to: @user.email, subject: 'Bienvenue sur notre super site!')
+		@url = 'https://boutique-des-chats.herokuapp.com/'
+		mail(to: @user.email, subject: 'Bienvenue sur notre boutique !')
 	end
 
 	def order_email(user, order)
@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
 		@order = order
 		@items = @order.items
 		@items.each do |item|
-			@filename = item.id.to_s + item.picture.filename.extension_with_delimite
+			@filename = item.id.to_s + item.picture.filename.extension_with_delimiter
 			attachments.inline[@filename] = item.picture.download
 		end
 		

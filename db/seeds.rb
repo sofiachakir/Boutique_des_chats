@@ -15,9 +15,8 @@ puts "Destroy all previous Items"
 Item.all.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('items')
-puts "Create Items"
+
+puts "Create Admin account"
+User.create(email: "meiko.boutique@yopmail.com", password: "motdepasse", is_admin: true)
 
 puts "Done!"
-
-
-
