@@ -8,7 +8,7 @@ Connectez-vous avec : login :  "meiko.boutique@yopmail.com" | password : "motdep
 
 ## Version en ligne :
 
-https://boutique-des-chats-staging.herokuapp.com
+https://boutique-des-chats.herokuapp.com
 
 ## How-to :
 Si vous voulez faire fonctionner ce projet localement, téléchargez ce repository, soit à partir d'un fichier a.zip, soit en le clonant.
