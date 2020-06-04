@@ -7,13 +7,17 @@
 
 @media (min-width: 992px) {
   .intro-img {
-    width: 75%;
+    width: 28rem;
+    margin-right: 10rem;
+    object-fit: cover;
+    max-height: 22rem;
     float: right;
   }
   .intro-text {
     left: 0;
-    width: 45%;
-    margin-top: 3rem;
+    width: 27rem;
+    margin-top: -2rem;
+    margin-left: 10rem;
     position: absolute;
 
   }

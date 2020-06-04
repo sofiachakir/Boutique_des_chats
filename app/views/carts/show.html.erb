@@ -2,6 +2,11 @@
   <div class="row">
     <div class="col-9">
       <div class="card mb3">
+        <% if @all_items.empty? %>
+        <div class="text-center">
+        <img src="https://fotosisters.com/wp-content/uploads/2019/03/404-Sad-Cat.png" alt="Sad Cat" class="sadcat" />
+        </div>
+            <% else %>
         <ul class="list-group list-group-flush">
           <% @all_items.each do |item| %>
 
@@ -23,14 +28,16 @@
             </li>
           <% end %>
         </ul>
+         <%end%>
       </div>
     </div>
-    <div class="col-3">
+    <div class="col-3 cart-button">
       <div class="card mb3">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <h4>Total: <%= @cart.total_price %> €</h4>
+
               <% if @cart.total_price.to_i != 0%>
+              <h4>Total: <%= @cart.total_price %> €</h4>
                 <%= form_tag orders_path do %>
                   <article>
                     <% if flash[:error].present? %>
