@@ -3,10 +3,10 @@
 Bienvenue dans notre projet. On a realisé un site boutique en ligne.
 
 #### Compte Administrateur
-Connectez-vous avec : login :  | password : 
+Connectez-vous avec : login :  "meiko.boutique@yopmail.com" | password : "motdepasse" 
 
 
-## version en ligne :
+## Version en ligne :
 
 https://boutique-des-chats-staging.herokuapp.com
 
@@ -34,12 +34,12 @@ rails server
 checkout the website !
 
 ## Team :
-Athénais DUPUY 
+Athénais DUPUY https://github.com/AtheDev
 
-Emilie DUFAU
+Emilie DUFAU https://github.com/EmilieDufau 
 
 Eva AFRIANA https://github.com/evafriana 
 
-Jérémi DELMAS
+Jérémi DELMAS https://github.com/delmasdev
 
 Sofia CHAKIR : https://github.com/sofiachakir
