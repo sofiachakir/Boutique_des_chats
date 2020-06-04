@@ -33,7 +33,7 @@
             <%=current_user.email%>
           </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon profil", user_path(current_user), class:"dropdown-item" %>
+              <%= link_to "Mon profil", profile_path, class:"dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class:"dropdown-item", method: :delete %></div>
             </div>
         </div>
@@ -43,7 +43,7 @@
       <ul class="navbar-nav mr-4">
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to 'add_shopping_cart', user_cart_path(current_user.id, current_user.cart.id), class: "nav-link material-icons text-white " %>
+            <%= link_to 'add_shopping_cart', cart_path, class: "nav-link material-icons text-white " %>
             <% else %>
             <%= link_to 'add_shopping_cart', new_user_session_path, class: "nav-link material-icons text-white" %>
           <% end %>
